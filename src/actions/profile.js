@@ -1,4 +1,4 @@
-import { GET_PROFILE, PROFILE_ERROR,GET_PROFILES, GET_REPOS } from './types'
+import { GET_PROFILE, PROFILE_ERROR,GET_PROFILES } from './types'
 import axios from 'axios';
 
 
@@ -35,8 +35,6 @@ console.log(res.data.data)
             return data.id.toString() === id.toString()
         } )
        }
-console.log('profileReqd')
-console.log(profileReqd[0])
        dispatch({
            type: GET_PROFILE,
            payload: profileReqd[0]
@@ -44,7 +42,6 @@ console.log(profileReqd[0])
     } catch (err) {
         dispatch({
             type: PROFILE_ERROR,
-            // payload: { msg : err.response.statusText, status: err.response.status}
             payload: { msg : err.response}
         })
     }

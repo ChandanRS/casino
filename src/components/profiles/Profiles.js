@@ -12,14 +12,11 @@ const Profiles = ( {getAllProfiles ,profile:{profiles,loading} } ) => {
 
     if(profiles && profiles.data){
       for (const value of Object.values(profiles.data)) {
-        console.log({value})
         employeeData.push(value)
       }
     }
     
 
-console.log(profiles.data)
-console.log(employeeData)
 
     useEffect(()=>{
         getAllProfiles()
@@ -37,11 +34,7 @@ console.log(employeeData)
               <i className="fab fa-connectdevelop"></i> Browse and Explore Employees
               </p>
             </div>
-            {/* {
-            employeeData.length > 0 ? (
-              employeeData.map((profile) => <ProfileItems profile={profile} />)
-            )  : <Spinner /> 
-            } */}
+           
             <div className="table-contaner">
           <table className="table">
             <tr>

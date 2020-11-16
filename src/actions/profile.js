@@ -1,30 +1,5 @@
 import { GET_PROFILE, PROFILE_ERROR,GET_PROFILES, GET_REPOS } from './types'
 import axios from 'axios';
-// import {Link, withRouter} from 'react-router-dom'
-
-
-//Get current users profile
-export const getCurrentProfile = () => async dispatch => {
-    try {
-       const res = await axios.get('/api/profile/me')
-console.log({res})
-       dispatch({
-           type: GET_PROFILE,
-           payload: res.data.profile
-       })
-    } catch (err) {
-        console.log(err)
-        dispatch({
-            type: PROFILE_ERROR,
-            // payload: { msg : err.response.statusText, status: err.response.status}
-            payload: { msg : err.response}
-        })
-    }
-}
-
-
-
-
 
 
 
@@ -76,21 +51,3 @@ console.log(profileReqd[0])
 }
 
 
-
-//GET GITHUB REPOS 
-export const getRepos = (githubusername) => async dispatch => {
-    try {
-       const res = await axios.get(`/api/profile/github/${githubusername}`)
-
-       dispatch({
-           type: GET_REPOS,
-           payload: res.data
-       })
-    } catch (err) {
-        dispatch({
-            type: PROFILE_ERROR,
-            // payload: { msg : err.response.statusText, status: err.response.status}
-            payload: { msg : err.response}
-        })
-    }
-}

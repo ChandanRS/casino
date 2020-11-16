@@ -32,7 +32,7 @@ console.log({res})
 
 export const getAllProfiles = () => async dispatch => {
     try {
-       const res = await axios.get('http://dummy.restapiexample.com/api/v1/employees')
+       const res = await axios.get('https://dummy.restapiexample.com/api/v1/employees')
 console.log(res.data)
        dispatch({
            type: GET_PROFILES,
@@ -52,7 +52,7 @@ console.log(res.data)
 //Get Profile by user id
 export const getProfileById = (id) => async dispatch => {
     try {
-       const res = await axios.get('http://dummy.restapiexample.com/api/v1/employees')
+       const res = await axios.get('https://dummy.restapiexample.com/api/v1/employees')
 console.log(res.data.data)
        let profileReqd=null
        if(res && res.data && res.data.data){

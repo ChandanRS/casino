@@ -25,7 +25,6 @@ const App= ()=> {
         <Route exact path='/' component = {Login} />
         <Switch>
         <PrivateRoute exact path='/users'component={Profiles} />
-        {/* <PrivateRoute exact path='/profile/:id' component = {Profile} /> */}
         </Switch>
         </Fragment>
       </Router>

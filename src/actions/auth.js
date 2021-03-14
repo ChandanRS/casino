@@ -19,9 +19,6 @@ export const login = (username, password) => async (dispatch) => {
     if (error) {
       console.log(error)
     }
-    dispatch({
-      type: LOGIN_FAIL,
-    });
   }
 };
 

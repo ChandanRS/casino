@@ -1,5 +1,4 @@
 import {
-  LOGIN_FAIL,
   LOGIN_SUCCESS,
   LOGOUT,
   USER_LOADED

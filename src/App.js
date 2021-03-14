@@ -7,7 +7,6 @@ import Login from './components/auth/Login'
 import { Fragment } from 'react';
 import Profiles from './components/profiles/Profiles'
 import PrivateRoute from './components/routing/PrivateRoute'
-import Profile from './components/profile/Profile'
 import { useEffect } from 'react';
 import {loadUser} from './actions/auth'
 
@@ -25,8 +24,8 @@ const App= ()=> {
         <Navbar />
         <Route exact path='/' component = {Login} />
         <Switch>
-        <Route exact path='/profiles'component={Profiles} />
-        <PrivateRoute exact path='/profile/:id' component = {Profile} />
+        <PrivateRoute exact path='/users'component={Profiles} />
+        {/* <PrivateRoute exact path='/profile/:id' component = {Profile} /> */}
         </Switch>
         </Fragment>
       </Router>

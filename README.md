@@ -1,4 +1,4 @@
-# Users App
+# Casino App
 
 Created for an assessment conducted by Paktolus solutions.
 

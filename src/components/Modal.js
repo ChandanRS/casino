@@ -4,7 +4,7 @@ import Modal from "@material-ui/core/Modal";
 import Button from "@material-ui/core/Button";
 import Timelines from "./Timelines";
 import closeIcon from "../images/close.svg";
-
+import Casino from './casinoFiles/Casino'
 function getModalStyle() {
   const top = 50;
   const left = 50;
@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SimpleModal({ user }) {
+export default function SimpleModal({data}) {
   // const [selectedUser,setSelectedUser] = React.useState(user)
   const classes = useStyles();
   // getModalStyle is not a pure function, we roll the style only on the first render
@@ -54,8 +54,17 @@ export default function SimpleModal({ user }) {
         }}
         id="simple-modal-title"
       >
-        Timelines for {user && user.real_name}
-        <Button
+        {/* Timelines for {user && user.real_name} */}
+        
+      </h2>
+
+      <div
+        style={{ display: "flex", justifyContent: "center" }}
+        id="simple-modal-description"
+      >
+        {/* <Timelines user={user} /> */}
+        <Casino handler={handleClose} />
+        {/* <Button
           style={{ position: "absolute", right: "0px", fontWeight: "600" }}
           onClick={handleClose}
         >
@@ -64,31 +73,30 @@ export default function SimpleModal({ user }) {
             alt="close"
             src={closeIcon}
           ></img>
-        </Button>
-      </h2>
-
-      <div
-        style={{ display: "flex", justifyContent: "center" }}
-        id="simple-modal-description"
-      >
-        <Timelines user={user} />
+        </Button> */}
       </div>
-      <SimpleModal />
+      {/* <SimpleModal /> */}
     </div>
   );
-
+console.log({open})
   return (
     <div style={{ fontFamily: "DM Sans" }}>
+      <div style={{ width: "10rem",margin:"auto"}}>
       <Button
-        style={{ marginTop: "10px", fontWeight: "600" }}
+        style={{ margin: "2rem", fontWeight: "600",padding:"0.5rem 2rem" }}
         href=""
         color="primary"
+        variant="contained"
         type="button"
         onClick={handleOpen}
+        fullWidth
       >
-        {user && user.real_name}
+        {/* {user && user.real_name} */}
+        PLAY
       </Button>
+      </div>
       <Modal
+      data = {data}
         open={open}
         onClose={handleClose}
         aria-labelledby="simple-modal-title"

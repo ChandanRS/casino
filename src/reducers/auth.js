@@ -19,7 +19,8 @@ export default function (state = initialState, action){
                 isAuthenticated: true,
             }
         case LOGOUT:
-            localStorage.removeItem('user')
+            // localStorage.removeItem('user')
+            localStorage.clear()
             return {
                 ...state,
                 isAuthenticated: false,

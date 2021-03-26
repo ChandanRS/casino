@@ -7,8 +7,8 @@ import {
 
 
 //Login User
-export const login = (username, password) => async (dispatch) => {
-  console.log(username, password);
+export const login = (username) => dispatch => {
+  console.log(username);
   
   try {
     dispatch({
